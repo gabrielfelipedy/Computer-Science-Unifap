@@ -56,3 +56,7 @@ This System is based on 3 axis (x, y and z) perpendicular to each other, where x
 <div align="center">
   <img style="width: 500px; height: 500px;" src="https://thumbs.dreamstime.com/b/d-axis-colored-vector-white-background-d-axis-colored-vector-white-background-illustration-100807298.jpg" alt="cartesian axis" />
 </div>
+
+<br><br>
+
+For to locate a poit in the space throught this System, we need to specify 3 number (for x, y and x respectively)
