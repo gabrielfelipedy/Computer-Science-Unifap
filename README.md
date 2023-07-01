@@ -2,7 +2,7 @@
 
 ## Goals 🏁
 
-In this repository, I have been uploading all the important things to that people cousing Computer Science
+In this repository, I have been uploading all the important things to whom is studying Computer Science
 
 The subjects are sorted by semester.
 
