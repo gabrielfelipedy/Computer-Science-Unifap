@@ -15,6 +15,10 @@ We're gonna study:
 * Oscilations
 * Fluids and Thermodynamics Laws
 
+# Sumary
+
+* [Vectors](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/PhysicsI/README.md#vectors)
+
 <br><br>
 Let's start understaing something about vectors:
 
@@ -22,7 +26,8 @@ Let's start understaing something about vectors:
 
 ***
 
-# Vectors
+# Vectors 
+[[Back to topics]](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/PhysicsI/README.md#sumary)
 
 Let´s start this subject with a question:
 <br><br>
@@ -49,7 +54,7 @@ We can answer this question in many ways, let's choose this one:
 <br><br>
 For now, we're just gonna study the Cartesian Coordinate System
 
-# Cartesian Coordinate System
+## Cartesian Coordinate System
 
 This System is based on 3 axis (x, y and z) perpendicular to each other, where x represents the width, y the weight and z the height.
 <br><br>
