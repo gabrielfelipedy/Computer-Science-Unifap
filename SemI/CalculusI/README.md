@@ -26,3 +26,50 @@ Definition of One-Sided Limits:
 
 We write $$\lim\limits_{x \to a^{-}} f(x) = L$$ and say the left-hand limit of $f(x)$ as $x$ approaches $a$ [or the limit of $f(x)$ as  x approaches $a$ from the left] is equal to $L$ if we can make the values of $f(x)$  arbitrarily close to $L$ by taking $x$ to be sufficiently close to a with $x$ less than $a$.
 
+Similarly, if we require that $x$ be greater than $a$, we get “the right-hand limit of $f(x)$ as $x$ approaches $a$ is equal to $L$” and we write:
+
+$$\lim\limits_{x \to a^{+}} f(x) = L$$ 
+
+Thus the notation $x \to a^{+}$ means that we consider only $x$ greater than $a$. 
+
+# Infinite Limits (vertical asymptote)
+
+Let $f$ be a function defined on both sides of $a$, except possibly at $a$ itself. Then 
+
+$$\lim\limits_{x \to a} f(x) = \infty$$
+
+means that the values of $f(x)$ can be made arbitrarily large (as large as we please) by taking $x$ sufficiently close to $a$, but not equal to $a$
+
+Likewise, we have 
+
+$$\lim\limits_{x \to a} f(x) = -\infty$$ 
+
+means that the values of $f(x)$ can be made arbitrarily large negative by taking $x$ sufficiently close to $a$, but not equal to $a$.
+
+# Limits Laws
+
+Suppose that $c$ is a constant and the limits $$\lim\limits_{x \to a} f(x)  \quad  and  \quad  \lim\limits_{x \to a} f(x)$$ exist. Then
+
+$$\lim\limits_{x \to a} [f(x) + g(x)] = \lim\limits_{x \to a} f(x) + \lim\limits_{x \to a} g(x)$$
+
+$$\lim\limits_{x \to a} [f(x) - g(x)] = \lim\limits_{x \to a} f(x) - \lim\limits_{x \to a} g(x)$$
+
+$$\lim\limits_{x \to a} [cf(x)] = c\lim\limits_{x \to a} f(x)$$
+
+$$\lim\limits_{x \to a} [f(x)g(x)] = \lim\limits_{x \to a} f(x) * \lim\limits_{x \to a} g(x)$$
+
+$$\lim\limits_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim\limits_{x \to a} f(x)}{\lim\limits_{x \to a} g(x)} \quad if \lim\limits_{x \to a} g(x) \neq 0$$
+
+$$\lim\limits_{x \to a} [f(x)]^{n} = [\lim\limits_{x \to a} f(x)]^{n}   \quad  where\quad n\quad is\quad a\quad positive\quad integer$$
+
+$$\lim\limits_{x \to a} c = c$$
+
+$$\lim\limits_{x \to a} x = a$$
+
+These five laws can be stated verbally as follows: 
+
+1. The limit of a sum is the sum of the limits. 
+2. The limit of a difference is the difference of the limits. 
+3. The limit of a constant times a function is the constant times the limit of the function. 
+4. The limit of a product is the product of the limits. 
+5. The limit of a quotient is the quotient of the limits (provided that the limit of the denominator is not 0).
