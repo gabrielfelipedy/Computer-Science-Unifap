@@ -5,7 +5,8 @@
 
 # Sumary 
 
-* [Limits and continuity](#)
+* [Intuitive Definition of a Limit](#)
+* [One-Sided Limits](#)
 * [Infinite limits](#)
 * [Limit Laws](#)
 
