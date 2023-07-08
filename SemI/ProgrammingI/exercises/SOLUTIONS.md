@@ -59,10 +59,10 @@ int main() {
   printf("Type the name of the second person: ");
   scanf("%s", name2);
 
-  printf("Type the height of the secondperson: ");
+  printf("Type the height of the second person: ");
   scanf("%lf", &height2);
 
-  printf("Type the name of the first person: ");
+  printf("Type the weight of the first person: ");
   scanf("%lf", &weight2);
 
   if(height1 == height2)
