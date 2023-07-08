@@ -51,19 +51,19 @@ int main() {
   scanf("%s", name1);
 
   printf("Type the height of the first person: ");
-  scanf("%lf", &height1);
+  scanf("%f", &height1);
 
   printf("Type the weight of the first person: ");
-  scanf("%lf", &weight1);
+  scanf("%f", &weight1);
 
   printf("Type the name of the second person: ");
   scanf("%s", name2);
 
   printf("Type the height of the second person: ");
-  scanf("%lf", &height2);
+  scanf("%f", &height2);
 
   printf("Type the weight of the first person: ");
-  scanf("%lf", &weight2);
+  scanf("%f", &weight2);
 
   if(height1 == height2)
     printf("They´re the same height");
