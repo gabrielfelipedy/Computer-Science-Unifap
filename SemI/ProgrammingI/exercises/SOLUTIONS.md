@@ -47,7 +47,7 @@ int main() {
   char name1[20], name2[20];
   float height1, height2, weight1, weight2;
 
-  printf("Type the name of the first person: ");
+  printf("\nType the name of the first person: ");
   scanf("%s", name1);
 
   printf("Type the height of the first person: ");
@@ -70,16 +70,15 @@ int main() {
  
   if(weight1 == weight2)
     printf("They´re the same weight");
- 
 
   if(height1 > height2)
-    printf("The person %s is the tallest", name1);
+    printf("\nThe person %s is the tallest", name1);
   else
-    printf("The person %s is the tallest", name2);
+    printf("\nThe person %s is the tallest", name2);
 
   if(weight1 > weight2)
-    printf("The person %s is the heaviest", name1);
+    printf("\nThe person %s is the heaviest", name1);
   else
-    printf("The person %s is the heaviest", name2);
+    printf("\nThe person %s is the heaviest", name2);
 }
 ```
