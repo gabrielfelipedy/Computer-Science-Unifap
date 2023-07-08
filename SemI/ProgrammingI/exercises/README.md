@@ -3,7 +3,7 @@
 # Sumary
 
 * [if-else exercises](#)
-* [See all resolutions](#)
+* [See all resolutions](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/ProgrammingI/exercises/SOLUTIONS.md)
 
 # if-else exercises
 
