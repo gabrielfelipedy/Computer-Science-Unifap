@@ -7,4 +7,4 @@
 
 # if-else exercises
 
-71. Create an algorithm which asks the name, height and weight of two people and presents the names of the heaviest person and of the tallest person [[resolution](#)]
+71. Create an algorithm which asks the name, height and weight of two people and presents the names of the heaviest person and of the tallest person [[resolution]](#)
