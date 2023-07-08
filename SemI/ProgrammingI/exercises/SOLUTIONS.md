@@ -60,10 +60,10 @@ int main() {
   scanf("%s", name2);
 
   printf("Type the height of the secondperson: ");
-  scanf("%lf", height2);
+  scanf("%lf", &height2);
 
   printf("Type the name of the first person: ");
-  scanf("%lf", weight2);
+  scanf("%lf", &weight2);
 
   if(height1 == height2)
     printf("They´re the same height");
