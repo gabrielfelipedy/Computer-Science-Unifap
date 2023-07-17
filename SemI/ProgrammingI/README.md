@@ -6,7 +6,7 @@
 # Sumary
 
 * [Exercise list](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/ProgrammingI/exercises)
-* [What is programming?](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/edit/main/SemI/ProgrammingI/README.md#what-is-programming)
+* [What is programming?](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/ProgrammingI/README.md#what-is-programming)
 
 # What is programming?
 
