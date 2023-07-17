@@ -5,10 +5,10 @@
 
 # Sumary 
 
-* [Intuitive Definition of a Limit](#)
-* [One-Sided Limits](#)
-* [Infinite limits](#)
-* [Limit Laws](#)
+* [Intuitive Definition of a Limit](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI#intuitive-definition-of-a-limit)
+* [One-Sided Limits](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#one-sided-limits)
+* [Infinite limits](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#infinite-limits-vertical-asymptote)
+* [Limit Laws](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#limits-laws)
 
 # Intuitive Definition of a Limit 
 
