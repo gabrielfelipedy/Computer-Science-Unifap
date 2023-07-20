@@ -14,6 +14,9 @@ int binomy(int n ,int k) {
 
 void print_tri(int altura) {
 	for(int i = 0; i < altura; i++) {
+
+		for(int k = (altura)-(i); k >= 0; k--) printf(" ");
+
 		for(int j = 0; j <= i; j++) {
 			printf("%d ", binomy(i, j));
 		}
