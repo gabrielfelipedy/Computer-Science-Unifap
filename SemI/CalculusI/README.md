@@ -10,6 +10,7 @@
 * [Infinite limits](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#infinite-limits-vertical-asymptote)
 * [Limit Laws](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#limits-laws)
 * [Squeeze theorem](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#squeeze-theorem)
+* [Precise definition of a limit](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#precise-definition-of-a-limit)
 
 # Intuitive Definition of a Limit 
 
@@ -87,3 +88,14 @@ and also suppose that
 $$\lim\limits_{x \to a} g(x) = \lim\limits_{x \to a} h(x) = L$$
 Then
 $$\lim\limits_{x \to a} f(x) = L$$
+
+# Precise definition of a limit
+
+Suppose f is a function. We say that $\lim\limits_{x \to a} f(x) = L$ if for every $ϵ > 0$ there is a $δ > 0$ so that whenever $$0 < |x−a| < δ, |f(x)−L| < ϵ$$
+
+For a left-hand limit, we have
+$$|a−δ| < x < a, |f(x)−L| < ϵ$$
+
+And right-hand limits
+$$a < x < |a+δ|, |f(x)−L| < ϵ$$
+
