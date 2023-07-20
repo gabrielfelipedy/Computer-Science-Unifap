@@ -9,6 +9,7 @@
 * [One-Sided Limits](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#one-sided-limits)
 * [Infinite limits](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#infinite-limits-vertical-asymptote)
 * [Limit Laws](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#limits-laws)
+* [Squeeze theorem](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI/CalculusI/README.md#squeeze-theorem)
 
 # Intuitive Definition of a Limit 
 
@@ -73,3 +74,16 @@ These five laws can be stated verbally as follows:
 3. The limit of a constant times a function is the constant times the limit of the function. 
 4. The limit of a product is the product of the limits. 
 5. The limit of a quotient is the quotient of the limits (provided that the limit of the denominator is not 0).
+
+# Squeeze theorem
+
+In calculus, the squeeze theorem (also known as the sandwich theorem) is a theorem regarding the limit of a function that is trapped between two other functions.
+
+
+
+Theorem —  Let $I$ be an interval containing the point $a$. Let $g$, $f$, and $h$ be functions defined on $I$, except possibly at $a$ itself. Suppose that for every $x$ in I not equal to $a$, we have
+$$g(x) ≤ f(x) ≤ h(x)$$
+and also suppose that
+$$\lim\limits_{x \to a} g(x) = \lim\limits_{x \to a} h(x) = L$$
+Then
+$$\lim\limits_{x \to a} f(x) = L$$
