@@ -1,20 +1,20 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main() {
-	float nota1, nota2;
-	printf("Informe a nota 1: ");
-	scanf("%f", &nota1);
-	printf("Informe a nota 2: ");
-	scanf("%f", &nota2);
+	float sum = 0;
+	int qtde = 0;
+	while(true) {
+		int temp;
+		printf("Informe a média do aluno: ");
+		scanf("%d", &temp);
 
-	float media = (nota1 + nota2) / 2;
-	if(media >= 7) {
-		printf("Aproved with %.2f\n", media);
+		if(temp == 0) break;
+
+		sum += temp;
+		qtde++;
 	}
 
-	else {
-		printf("Reproved! with %.2f\n", media);
-	}
-
-	return 0;
-}	
+	float total = sum / qtde;
+	printf("A total dos alunos é %.2f\n", total);
+}
