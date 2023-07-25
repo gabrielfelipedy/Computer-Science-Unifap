@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/*
+* Function calculates the fatorial of a number
+*/
+
 int fat(int n) {
 	int result = 1;
 	for(int i = n; i > 0; i--)
@@ -8,9 +12,17 @@ int fat(int n) {
 	return result;
 }
 
+/*
+* Function calculates a Newton's binomy
+*/
+
 int binomy(int n ,int k) {
 	return fat(n) / (fat(k) * fat(n-k));
 }
+
+/*
+* Function which fills and prints the triangle at the same time
+*/
 
 void print_tri(int altura) {
 	for(int i = 0; i < altura; i++) {
