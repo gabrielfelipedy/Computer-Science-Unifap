@@ -1,27 +1,19 @@
-import * as readline from 'node:readline'
-import { stdin as input, stdout as output } from 'node:process'
+const readline = require('readline')
 
-const rl = readline.createInterface({ input, output })
+const rl = readline.createInterface({ 
+	input: process.stdin, 
+	output: process.stdout 
+})
 
 const maior = (a, b) => {
 	return a > b ? a : b
 }
 
-var a = 0
-var b = 0
-
-rl.setPrompt(`Type a number: `)
-rl.prompt()
-rl.on('line', (num) => {
-	a = num
-	rl.close()
+rl.question('Enter a number: ', (num1) => {
+	rl.question('Enter another number: ', (num2) => {
+		let a = parseInt(num1)
+		let b = parseInt(num2)
+		console.log(`The biggest value is ${maior(a, b)}`)
+		rl.close()
+	})
 })
-
-rl.setPrompt(`Type another number: `)
-rl.prompt()
-rl.on('line', (num) => {
-	b = num
-	rl.close()
-})
-
-console.log(`The biggest value is ${maior(a, b)}`)
