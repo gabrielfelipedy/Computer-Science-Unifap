@@ -9,7 +9,7 @@ The subjects are sorted by semester.
 I hope the content of this repository can be useful for college students or curious of knowledge.
 Enjoy!
 
-* [Semester I](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/SemI)
+* [Semester I](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/semI)
 * [Semester II](#)
 * [Semester III](#)
 * [Semester IV](#)
