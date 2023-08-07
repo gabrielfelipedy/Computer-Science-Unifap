@@ -18,3 +18,4 @@ Enjoy!
 * [Semester VII](#)
 * [Semester VII](#)
 * [Semester IX](#)
+* [Complementar courses](https://github.com/gabrielfelipeassuncaodesouza/Computer-Science-Unifap/tree/main/complementar_courses)
