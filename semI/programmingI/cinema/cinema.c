@@ -96,13 +96,15 @@ int main() {
 
 		buy_seat(seat, seats);
 
-		if(qtde_vendidos == FILL * CHAI)
-			break;
-
-		printf("Deseja comprar mais ingressos? ");
-		getchar();
-		scanf("%c", &conti);
-		conti = tolower(conti);
+		if(qtde_vendidos == FILL * CHAI) {
+			printf("Todos os ingressos foram vendidos\n");
+			conti = 'n';
+		} else {
+			printf("Deseja comprar mais ingressos? ");
+			getchar();
+			scanf("%c", &conti);
+			conti = tolower(conti);
+		}
 
 	} while(conti == 's');
 
