@@ -12,12 +12,12 @@
 int total_faturado = 0;
 int qtde_vendidos = 0;
 
-void print_seats(int arr[][FILL]) {
+void print_seats(int arr[][CHAI]) {
 
 	int number = 1;
 
-	for(int i = 0; i < CHAI; i++) {
-		for(int j = 0; j < FILL; j++) {
+	for(int i = 0; i < FILL; i++) {
+		for(int j = 0; j < CHAI; j++) {
 			if(arr[i][j] == 0) {
 				printf("\x1b[32m%d\x1b[m ", number);
 			}
@@ -31,19 +31,19 @@ void print_seats(int arr[][FILL]) {
 	}
 }
 
-void buy_seat(int seat, int seats[][FILL]) {
+void buy_seat(int seat, int seats[][CHAI]) {
 
-	int fileira = seat / 50;
-	seat -= fileira * 50;
-
-	int coluna = seat;
-
-	if(fileira >= FILL || coluna >= CHAI || fileira < 0 || coluna < 0) {
+	if(seat <= 0 || seat > 1000) {
 		printf("Esse assento não existe!\n");
 		return;
 	}
 
-	if(seats[fileira][coluna-1] == 1) {
+	int fileira = seat / 20;
+	seat -= fileira * 20;
+
+	int coluna = seat;
+
+	if(seats[fileira][coluna-1] == OCPI) {
 		printf("O assento já está ocupado\n");
 		return;
 	}
@@ -81,7 +81,7 @@ void print_relatory() {
 
 int main() {
 
-	int seats[CHAI][FILL];
+	int seats[FILL][CHAI];
 	memset(seats, FREE, sizeof(seats));
 
 	char conti;
