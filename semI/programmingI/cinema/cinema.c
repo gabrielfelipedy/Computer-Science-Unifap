@@ -3,26 +3,31 @@
 #include <stdbool.h>
 #include <ctype.h>
 
-#define FILL 50
-#define CHAI 20
+#define FILL 50 //num de fileiras
+#define CHAI 20 //num de cadeiras p/ fileira
 
-#define FREE  0
-#define OCPI  1
+#define FREE  0 //assento livre é zero
+#define OCPI  1 //assento ocupado é um
 
 int total_faturado = 0;
 int qtde_vendidos = 0;
 
 void print_seats(int arr[][CHAI]) {
-
 	int number = 1;
 
 	for(int i = 0; i < FILL; i++) {
 		for(int j = 0; j < CHAI; j++) {
+
+			char space[3]; //corrige os espacos entre os numeros
+			if(number > 0 && number < 10) sprintf(space, "   ");
+			else if(number >= 10 && number < 100) sprintf(space, "  ");
+			else sprintf(space, " ");
+
 			if(arr[i][j] == 0) {
-				printf("\x1b[32m%d\x1b[m ", number);
+				printf("\x1b[32m%d\x1b[m%s", number, space);
 			}
 			else if(arr[i][j] == 1) {
-				printf("\x1b[31m%d\x1b[m ", number);
+				printf("\x1b[31m%d\x1b[m%s", number, space);
 			}
 
 			number++;
@@ -32,7 +37,6 @@ void print_seats(int arr[][CHAI]) {
 }
 
 void buy_seat(int seat, int seats[][CHAI]) {
-
 	if(seat <= 0 || seat > 1000) {
 		printf("Esse assento não existe!\n");
 		return;
@@ -50,6 +54,7 @@ void buy_seat(int seat, int seats[][CHAI]) {
 
 	int preco = 0;
 
+	//Verifica o preco conforme a fileira
 	if(fileira >= 0 && fileira <= 9) preco = 10;
 	else if(fileira >= 10 && fileira <= 38) preco = 20;
 	else preco = 100;
@@ -72,7 +77,6 @@ void buy_seat(int seat, int seats[][CHAI]) {
 }
 
 void print_relatory() {
-
 	printf("\n\n**** RELATÓRIO DE VENDAS ****\n\n\n");
 
 	printf("Foram vendidos %d ingressos\n", qtde_vendidos);
@@ -80,9 +84,8 @@ void print_relatory() {
 }
 
 int main() {
-
-	int seats[FILL][CHAI];
-	memset(seats, FREE, sizeof(seats));
+	int seats[FILL][CHAI]; //matriz com todos os assentos
+	memset(seats, FREE, sizeof(seats)); //preenche a matriz com 0s
 
 	char conti;
 	do {
