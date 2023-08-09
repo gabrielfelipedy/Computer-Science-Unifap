@@ -18,7 +18,7 @@ void print_seats(int arr[][CHAI]) {
 	for(int i = 0; i < FILL; i++) {
 		for(int j = 0; j < CHAI; j++) {
 
-			char space[3]; //corrige os espacos entre os numeros
+			char space[4]; //corrige os espacos entre os numeros
 			if(number > 0 && number < 10) sprintf(space, "   ");
 			else if(number >= 10 && number < 100) sprintf(space, "  ");
 			else sprintf(space, " ");
