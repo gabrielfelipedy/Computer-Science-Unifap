@@ -72,7 +72,7 @@ void buy_seat(int seat, int seats[][CHAI]) {
 
 	total_faturado+=preco;
 	qtde_vendidos++;
-	seats[fileira][coluna-1] = 1;
+	seats[fileira][coluna-1] = OCPI;
 	printf("Compra realizada com sucesso\n");
 }
 
@@ -91,7 +91,7 @@ int main() {
 	do {
 
 		int seat;
-		printf("\nEscolha um assento (0 = livre, 1 = ocupado):\n\n\n");
+		printf("\nEscolha um assento:\n\n\n");
 		print_seats(seats);
 
 		printf("\n\n$> ");
