@@ -50,8 +50,8 @@ void buy_seat(int seat, int seats[][CHAI]) {
 
 	int preco = 0;
 
-	if(fileira >= 0 && fileira <= 6) preco = 10;
-	else if(fileira > 6 && fileira <= 14) preco = 20;
+	if(fileira >= 0 && fileira <= 9) preco = 10;
+	else if(fileira >= 10 && fileira <= 38) preco = 20;
 	else preco = 100;
 
 	char confirm;
