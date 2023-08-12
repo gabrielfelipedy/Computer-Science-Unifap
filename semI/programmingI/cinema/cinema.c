@@ -17,19 +17,12 @@ void print_seats(int arr[][CHAI]) {
 
 	for(int i = 0; i < FILL; i++) {
 		for(int j = 0; j < CHAI; j++) {
-
-			char space[4]; //corrige os espacos entre os numeros
-			if(number > 0 && number < 10) sprintf(space, "   ");
-			else if(number >= 10 && number < 100) sprintf(space, "  ");
-			else sprintf(space, " ");
-
-			if(arr[i][j] == 0) {
-				printf("\x1b[32m%d\x1b[m%s", number, space);
+			if(arr[i][j] == FREE) {
+				printf("\x1b[32m%4d\x1b[m ", number);
 			}
-			else if(arr[i][j] == 1) {
-				printf("\x1b[31m%d\x1b[m%s", number, space);
+			else if(arr[i][j] == OCPI) {
+				printf("\x1b[31m%4d\x1b[m ", number);
 			}
-
 			number++;
 		}
 		putchar('\n');
