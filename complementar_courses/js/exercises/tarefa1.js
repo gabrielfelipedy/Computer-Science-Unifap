@@ -1,3 +1,6 @@
+// This exercises require readline module
+// Do npm i readline to install it
+
 const readline = require('readline')
 
 const rl = readline.createInterface({
