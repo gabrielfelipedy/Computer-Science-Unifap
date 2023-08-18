@@ -1,4 +1,4 @@
-let n = 5
+const n = 5
 console.log(`Tabuada do ${n}\n`)
 
 for(let i = 1; i <= 10; i++)
