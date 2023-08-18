@@ -1,9 +1,6 @@
 const doub = (a) => { return 2*a }
 const doubleArray = (array, f) => {
-	let copy = array.slice()
-	for(let i = 0; i < copy.length; i++) {
-		copy[i] = f(copy[i])
-	}
+	let copy = array.map(f)
 	return copy
 }
 
