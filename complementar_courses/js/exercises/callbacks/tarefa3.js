@@ -4,13 +4,13 @@ const usuario = {
 	email: 'marcos@mail.com'
 }
 
-function request(obj, f) {
+function request(obj) {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			if(!obj) {
 				reject(new Error('Empty Object'))
 			}
-			resolve(f(obj))
+			resolve(showObj(obj))
 		}, 1000,)
 	})
 }
@@ -25,6 +25,6 @@ const showObj = (obj) => {
 	return r
 }
 
-request(usuario, showObj)
+request(usuario)
 .then(result => console.log(result))
 .catch(error => console.log(error))
