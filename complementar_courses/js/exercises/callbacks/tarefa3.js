@@ -4,17 +4,6 @@ const usuario = {
 	email: 'marcos@mail.com'
 }
 
-function request(obj) {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			if(!obj) {
-				reject(new Error('Empty Object'))
-			}
-			resolve(showObj(obj))
-		}, 1000,)
-	})
-}
-
 const showObj = (obj) => {
 	let r = ""
 
@@ -25,6 +14,17 @@ const showObj = (obj) => {
 	return r
 }
 
-request(usuario)
-.then(result => console.log(result))
-.catch(error => console.log(error))
+async function request(obj, f) {
+	await new Promise((resolve, reject) => {
+		setTimeout(() => {
+			if(!obj) {
+				reject(new Error('Empty Object'))
+			}
+			resolve(f(obj))
+		}, 1000,)
+	})
+	.then(result => console.log(result))
+	.catch(error => console.log(error))
+}
+
+request(usuario, showObj)
