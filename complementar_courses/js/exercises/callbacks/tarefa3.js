@@ -4,22 +4,27 @@ const usuario = {
 	email: 'marcos@mail.com'
 }
 
-async function request(obj, f) {
-	await new Promise((resolve) => {
+function request(obj, f) {
+	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			resolve()
+			if(!obj) {
+				reject(new Error('Empty Object'))
+			}
+			resolve(f(obj))
 		}, 1000,)
-	}).then(() => {
-		f(obj)
-	}).catch((e) => {
-		console.log(`Error: ${e}`)
 	})
 }
 
 const showObj = (obj) => {
+	let r = ""
+
 	Object.entries(obj).forEach((prop) => {
-		console.log(`${prop[0]}: ${prop[1]}`)
+		r+=`${prop[0]}: ${prop[1]}\n`
 	})
+
+	return r
 }
 
 request(usuario, showObj)
+.then(result => console.log(result))
+.catch(error => console.log(error))
