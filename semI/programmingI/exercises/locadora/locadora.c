@@ -20,7 +20,6 @@ float readFloat(void) {
 	return n;
 }
 
-
 char* readLine(void) {
 	int bufsize = STR_BUF_SZ;
         char* buff = (char*)malloc(sizeof(char)*bufsize);
