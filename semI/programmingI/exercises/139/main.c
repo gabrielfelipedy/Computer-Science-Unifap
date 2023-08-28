@@ -38,7 +38,6 @@ void enableRawMode() {
 }
 
 void asyncRead(const char* msg) {
-
     int bufsz = MAX_STR;
     char* initStr = (char*)malloc(sizeof(char)*bufsz);
     
