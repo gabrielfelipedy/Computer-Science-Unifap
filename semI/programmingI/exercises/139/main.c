@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -46,14 +47,14 @@ void asyncRead(const char* msg) {
     int initColumnCursor = 1;
 
     enableRawMode();
-
+    
     while(1) {
         clearscr();
         printf("%s %s\n", msg, initStr);
         printf("Nome: \n");
         printf("Endereço: \n");
 
-        moveCursor(initColumnCursor, initPosCursor++);
+        moveCursor(initColumnCursor, initPosCursor);
 
         char c;
         read(STDIN_FILENO, &c, 1);
@@ -64,7 +65,14 @@ void asyncRead(const char* msg) {
             return;
         }
 
+        if(c == 127) {
+            c = '0';
+        }
+
+        if(!isalnum(c) && c != 32 && c != 127) continue;
+
         initStr[len++] = c;
+        moveCursor(initColumnCursor, initPosCursor++);
 
         if(len >= bufsz) {
             bufsz += MAX_STR;
