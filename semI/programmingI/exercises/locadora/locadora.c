@@ -1,72 +1,36 @@
+#include "gutils.h"
 #include "locadora.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-int readInt(void) {
-	int n;
-	scanf("%d", &n);
-	while(getchar() != '\n');
+film_t films[FILM_BUF_SZ];
+int totalFilms = 0;
 
-	return n;
+void loadFilms() {
+	FILE *f = fopen("films.txt", "r");
+	if(f == NULL) {
+		fprintf(stderr, "Error when open films\n");
+		exit(EXIT_FAILURE);
+	}
+
+	int qtde;
+	char* film = (char*)malloc(sizeof(char)*1000);
+	fscanf(f, "%d\n", &qtde);
+	fscanf(f, "{ '%s' }", film);
+
+	printf("We have %d films on storage\n", qtde);
+	printf("The %s is the first film\n", film);
 }
-
-float readFloat(void) {
-	float n;
-	scanf("%f", &n);
-	while(getchar() != '\n');
-
-	return n;
-}
-
-char* readLine(void) {
-	int bufsize = STR_BUF_SZ;
-        char* buff = (char*)malloc(sizeof(char)*bufsize);
-
-        if(!buff) {
-                fprintf(stderr, "malloc error\n");
-                return NULL;
-        }
-
-        int pos = 0;
-        while(1) {
-                int c = getchar();
-
-                if(c == EOF || c == '\n') {
-                        buff[pos] = '\0';
-			return buff;
-                }
-
-                buff[pos++] = c;
-
-                if(pos >= bufsize) {
-                        bufsize += STR_BUF_SZ;
-                        buff = realloc(buff, bufsize);
-                        if(!buff) {
-                                fprintf(stderr, "malloc error\n");
-                                return NULL;
-                        }
-                }
-        }
-}
-
+ 
 void addFilm(void) {
 	film_t new;
 
-	printf("\nType the title of the film: ");
-	new.title = readLine();
-
-	printf("Type the name of the director: ");
-	new.director = readLine();
-
-	printf("Type the year of release: ");
-	new.yearOfRelease = readInt();
-
-	printf("Type the rating: ");
-	new.rating = readFloat();
-
-	printf("Type the quantity of copys: ");
-	new.qtde = readInt();
+	new.title = readLine("\nType the title of the film: ");
+	new.director = readLine("Type the name of the director: ");
+	readInt("Type the year of release: ", &new.yearOfRelease);
+	readFloat("Type the rating: ", &new.rating);
+	readInt("Type the quantity of copys: ", &new.qtde);
 
 	films[totalFilms++] = new;
 	
@@ -94,10 +58,9 @@ void explainFilm(void) {
 	}
 
 	showFilms();
-	printf("Type the index of the film: \n");
-	printf("> ");
 
-	int index = readInt();
+	int index;
+	readInt("Type the index of the film: \n$> ", &index);
 	index--;
 
 	if(index < 0 || index >= totalFilms) {
@@ -124,13 +87,12 @@ void printHeader(void) {
 }
 
 int chooseOpt(void) {
-	printf("1 - Add film\n");
-	printf("2 - Show all films\n");
-	printf("3 - Show a film's data\n");
-	printf("4 - Quit\n\n");
-	printf("> ");
+
+	const char* msg = "1 - Add film\n2 - Show all films\n3 - Show a film's data\n4 - Quit\n\n$> ";
 	
-	return readInt();
+	int ret;
+	readInt(msg, &ret);
+	return ret;
 }
 
 void handle(int opt) {
@@ -153,14 +115,15 @@ void handle(int opt) {
 }
 
 int main(void) {
-	int opt;
-	printHeader();
+	//int opt;
+	loadFilms();
+	//printHeader();
 
-	do {
-		opt = chooseOpt();
-		handle(opt);	
+	//do {
+	//	opt = chooseOpt();
+	//	handle(opt);	
 
-	} while(opt != 4);
+	//} while(opt != 4);
 
 	return 0;
 }

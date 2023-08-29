@@ -12,14 +12,13 @@ typedef struct {
 	int qtde;
 } film_t;
 
-film_t films[FILM_BUF_SZ];
-int totalFilms = 0;
-
 void addFilm(void);
 void showFilms(void);
 void explainFilm(void);
 void printHeader(void);
 int chooseOpt(void);
 void handle(int opt);
+
+void loadFilms();
 
 #endif

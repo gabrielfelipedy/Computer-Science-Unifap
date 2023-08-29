@@ -1,6 +1,6 @@
 CC=gcc
 TARGET=locadora
-OBJS=locadora.c
+OBJS=locadora.c gutils.c
 CFLAGS=-Wall -pedantic -std=c99
 
 $(TARGET): $(OBJS)
