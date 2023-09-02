@@ -66,7 +66,14 @@ void asyncRead(const char* msg) {
         }
 
         if(c == 127) {
-            c = '0';
+            c = 32;
+            len--;
+
+            if(len < 0) len = 0;
+
+            initPosCursor-=2;
+
+            if(initPosCursor < 1) initPosCursor = 1;
         }
 
         if(!isalnum(c) && c != 32 && c != 127) continue;
