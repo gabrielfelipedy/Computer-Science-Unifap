@@ -1,5 +1,5 @@
 PROJ_NAME=chess
-OBJS=main.o render.o board.c pieces.o
+OBJS=main.o render.o board.c pieces.o stype.o
 
 CC=gcc
 CCFLAGS=-Wall -pedantic -std=c99 -g

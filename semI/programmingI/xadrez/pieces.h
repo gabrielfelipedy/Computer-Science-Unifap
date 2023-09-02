@@ -14,6 +14,6 @@ enum {
     KING
 };
 
-void initPieces(int board[][8], size_t size);
+void initPieces(int board[][8]);
 
 #endif
