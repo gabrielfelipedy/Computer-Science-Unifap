@@ -4,7 +4,9 @@
   "description": "The first express project",
   "main": "aula01.js",
   "scripts": {
-    "dev": "node aula01.js",
+    "dev1": "node ./aula01/aula01.js",
+    "dev2": "node ./aula02/main.js",
+    "dev3": "node --watch ./aula03/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "gabrielfelipe",
