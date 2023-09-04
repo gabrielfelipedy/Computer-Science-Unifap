@@ -12,8 +12,17 @@ app.get('/', (req, res)=> {
 
 app.post('/users', (req, res) => {
     const user = req.body
+
+    let msg = ""
+    if(user.idade < 18) {
+        msg = "cadastrado com sucesso (menor de idade)"
+    }
+    else {
+        msg = "cadastrado comm sucersso (maior de idade)"
+    }
+
     users.push(user)
-    res.json({User: users})
+    res.send(`${msg}`)
 })
 
 app.listen(PORT, ()=> {
