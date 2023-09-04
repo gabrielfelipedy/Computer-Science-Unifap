@@ -4,27 +4,35 @@
 #include <stdio.h>
 
 char ship_ui[5][15] = {
-  {"     _~  _~    "},
-  {"  __|=| |=|__  "},
-  {"  \\ o.o.o.oY/ "},
-  {"   \\_______/  "},
-  {"~~~~~~~~~~~~~~~"}
+  {"    _~  _~   "},
+  {" __|=| |=|__ "},
+  {" \\ o.o.o.oY/ "},
+  {"  \\_______/  "},
+  {" ~~~~~~~~~~~ "}
 };
 
 char wave_ui[5][15] = {
-  {"~~~~~~~~~~~~~~~"},
-  {"~~~~~~~~~~~~~~~"},
-  {"~~~~~~~~~~~~~~~"},
-  {"~~~~~~~~~~~~~~~"},
-  {"~~~~~~~~~~~~~~~"}
+  {" ~~~~~~~~~~~ "},
+  {" ~~~~~~~~~~~ "},
+  {" ~~~~~~~~~~~ "},
+  {" ~~~~~~~~~~~ "},
+  {" ~~~~~~~~~~~ "}
+};
+
+char assert_ui[5][15] = {
+  {"  x       x  "},
+  {"    x   x    "},
+  {"      x      "},
+  {"    x   x    "},
+  {"  x       x  "}
 };
 
 char miss_ui[5][15] = {
-  {"   x       x   "},
-  {"     x   x     "},
-  {"       x       "},
-  {"     x   x     "},
-  {"   x       x   "}
+  {"      ,--.!, "},
+  {"   __/   -*- "},
+  {" ,d08b.  '|` "},
+  {" 0088MM      "},
+  {" `9MMP       "},
 };
 
 void printPart(char draw[5][15], int part) {
@@ -57,13 +65,16 @@ void renderBoard(char board[][TAM]) {
                     case SHIP:
                         printPart(ship_ui, part);
                         break;
-                    case ERROR:
                     case ASSERT:
+                        printPart(assert_ui, part);
+                        break;
+                    case ERROR:
                         printPart(miss_ui, part);
                         break;
                 }
+                printf("\x1b[m");
             }  
-            putchar('\n');
+            printf("\n");
         }
         
 
