@@ -1,8 +1,35 @@
 #include "board.h"
 #include "render.h"
-#include "ui.h"
 
 #include <stdio.h>
+
+char ship_ui[5][15] = {
+  {"     _~  _~    "},
+  {"  __|=| |=|__  "},
+  {"  \\ o.o.o.oY/ "},
+  {"   \\_______/  "},
+  {"~~~~~~~~~~~~~~~"}
+};
+
+char wave_ui[5][15] = {
+  {"~~~~~~~~~~~~~~~"},
+  {"~~~~~~~~~~~~~~~"},
+  {"~~~~~~~~~~~~~~~"},
+  {"~~~~~~~~~~~~~~~"},
+  {"~~~~~~~~~~~~~~~"}
+};
+
+char miss_ui[5][15] = {
+  {"   x       x   "},
+  {"     x   x     "},
+  {"       x       "},
+  {"     x   x     "},
+  {"   x       x   "}
+};
+
+void printPart(char draw[5][15], int part) {
+	printf("%s", draw[part]);
+}
 
 void clearscr()
 {
@@ -11,21 +38,39 @@ void clearscr()
 }
 
 void renderBoard(char board[][TAM]) {
+
     for(int i = 0; i < TAM; i++) {
+        //printf("%c\t", 'A' + i);
 
-        printf("%c\t", 'A' + i);
+        for(int part = 0; part < 5; part++) {
+            for(int j = 0; j < TAM; j++) {
+                char * color = (board[i][j] == ERROR) ? "\x1b[31m" : (board[i][j] == ASSERT ? "\x1b[35m" : (board[i][j] == SHIP ? "\x1b[32m" : "")); 
 
-        for(int j = 0; j < TAM; j++) {
-            char * color = (board[i][j] == 'E') ? "\x1b[31m" : (board[i][j] == 'A' ? "\x1b[35m" : (board[i][j] == 'N' ? "\x1b[32m" : "")); 
+                printf("%s", color);
 
-            printf("%s%c%s ", color, board[i][j], "\x1b[m");
+                switch (board[i][j])
+                {
+                    case WATER:
+                        printPart(wave_ui, part);
+                        break;
+                
+                    case SHIP:
+                        printPart(ship_ui, part);
+                        break;
+                    case ERROR:
+                    case ASSERT:
+                        printPart(miss_ui, part);
+                        break;
+                }
+            }  
+            putchar('\n');
         }
-        putchar('\n');
-    }
+        
 
-    printf("\n\n\t");
-    for(int i = 0; i < TAM; i++) {
-        printf("%d ", i);
+    //printf("\n\n\t");
+    //for(int i = 0; i < TAM; i++) {
+    //    printf("%d ", i);
+    //}
+    //putchar('\n');
     }
-    putchar('\n');
 }

@@ -5,5 +5,6 @@
 
 void clearscr();
 void renderBoard(char board[][TAM]);
+void printPart(char draw[5][15], int part);
 
 #endif
