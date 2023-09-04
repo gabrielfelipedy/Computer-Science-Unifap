@@ -3,6 +3,7 @@
 
 #include "board.h"
 
+void clearscr();
 void renderBoard(char board[][TAM]);
 
 #endif

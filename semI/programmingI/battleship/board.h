@@ -3,7 +3,12 @@
 
 #include <stddef.h>
 
-#define TAM 10
+#define TAM 5
+
+#define WATER '~'
+#define SHIP 'N'
+#define ERROR 'E'
+#define ASSERT 'A'
 
 void initBoard(char board[][TAM], size_t size);
 void putShips(char board[][TAM]);
