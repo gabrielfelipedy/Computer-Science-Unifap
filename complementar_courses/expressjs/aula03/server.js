@@ -15,14 +15,14 @@ app.post('/users', (req, res) => {
 
     let msg = ""
     if(user.idade < 18) {
-        msg = "cadastrado com sucesso (menor de idade)"
+        msg = "Cadastrado com sucesso (menor de idade)"
     }
     else {
-        msg = "cadastrado comm sucersso (maior de idade)"
+        msg = "Cadastrado comm sucersso (maior de idade)"
     }
 
     users.push(user)
-    res.send(`${msg}`)
+    res.send(msg)
 })
 
 app.listen(PORT, ()=> {
