@@ -1,4 +1,4 @@
-const { PrismaClient } = require("@prisma/client")
+const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 module.exports = {
@@ -35,6 +35,37 @@ module.exports = {
             res.json(user);
         } catch (error) {
           res.json(error);
+        }
+    },
+    async getUsers(req, res) {
+        const users = await prisma.user.findMany()
+        res.json(users);
+    },
+    async updateUser(req, res) {
+        try {
+            const { id } = req.params;
+            const { name, email } = req.body
+
+            const user = await prisma.user.findUnique({
+                where: { id: parseInt(id, 10) }
+            });
+
+            if(!user) {
+                return res.json({ error: "User doesn't exists" })
+            }
+
+            user = await prisma.user.update({
+                where: { id: parseInt(id, 10) },
+                data: { name, email },
+                select: {
+                    name: true,
+                    email: true
+                }
+            });
+            return res.json(user);
+
+        } catch(error) {
+            res.json(error);
         }
     }
 };
