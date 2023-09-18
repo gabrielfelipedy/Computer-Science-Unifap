@@ -3,3 +3,6 @@
 
 chess
 main
+
+node_modules
+.env
