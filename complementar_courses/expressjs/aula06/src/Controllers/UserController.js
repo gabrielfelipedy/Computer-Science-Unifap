@@ -67,5 +67,25 @@ module.exports = {
         } catch(error) {
             res.json(error);
         }
+    },
+    async deleteUser(req, res) {
+        try {
+            const { id } = req.params
+            const user = await prisma.user.findUnique({
+                where: { id: parseInt(id, 10) }
+            })
+
+            if(!user) {
+                return res.json({ error: "User doesn't exists" })
+            }
+
+            user = await prisma.user.delete({
+                where: { id: parseInt(id, 10) }
+            });
+            return res.json({ message: "User deleted sucessfully" });
+
+        } catch(error) {
+            res.json(error);
+        }
     }
 };
