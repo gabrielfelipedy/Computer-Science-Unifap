@@ -2,9 +2,12 @@ const express = require('express')
 const { PrismaClient } = require('@prisma/client')
 const cookieParser = require('cookie-parser')
 const bycript = require('bcrypt')
+const { createTokens, validateToken } = require("./JWT")
 
 const app = express()
 app.use(express.json())
+app.use(cookieParser())
+
 const prisma = new PrismaClient()
 
 app.post('/registrar', async (req, res) => {
@@ -40,13 +43,17 @@ app.post('/login', async (req, res) => {
       res.json({error: "Incorrect password"})
     }
     else {
+      const acessToken = createTokens(user)
+      res.cookie("acess-token", acessToken, {
+        httpOnly: false
+      })
       res.json("Logged In")
     }
   })
 })
 
-app.get('/perfil', async (req, res) => {
-  res.json("Login")
+app.get('/perfil', validateToken, (req, res) => {
+  res.json("Entrou no perfil");
 })
 
 app.listen(8080, ()=> {
