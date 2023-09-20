@@ -22,13 +22,27 @@ app.post('/registrar', async (req, res) => {
       res.json({err: "Something went wrong"});
     })
   })
-
-  res.json(name, password)
-
 })
 
 app.post('/login', async (req, res) => {
+  const { name, password } = req.body;
+  const user = await prisma.user.findFirst({
+    where: { name }
+  })
 
+  if(!user) {
+    res.status(404).json({error: "User not found"})
+  }
+
+  const pPassdw = user.password
+  bycript.compare(password, pPassdw).then(match => {
+    if(!match) {
+      res.json({error: "Incorrect password"})
+    }
+    else {
+      res.json("Logged In")
+    }
+  })
 })
 
 app.get('/perfil', async (req, res) => {
