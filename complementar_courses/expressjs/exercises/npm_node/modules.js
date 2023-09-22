@@ -1,3 +1,22 @@
+const movies = [
+  {
+    name: "Caes de Aluguel",
+    gender: "crime"
+  },
+  {
+    name: "Bastardos Inglórios",
+    gender: "guerra"
+  },
+  {
+    name: "Vingadores Ultimato",
+    gender: "super herói"
+  },
+  {
+    name: "Duro de matar",
+    gender: "crime"
+  }
+]
+
 module.exports = {
   removeDuplicated(arr) {
     let unique = []
@@ -32,5 +51,22 @@ module.exports = {
     secbigger = arr[i]
 
     return { bigger, secbigger }
-  }
+  },
+
+  filterMovies(movies) {
+    return new Promise((resolve, reject) => {
+      
+      setTimeout(() => {
+        let moviesFiltered = movies.filter(el => el.gender == "crime");
+
+        if(!movies) {
+          reject("Error, no movies")
+        }
+
+      resolve(moviesFiltered)
+      }, 500)
+    })
+  },
+
+  movies
 }
