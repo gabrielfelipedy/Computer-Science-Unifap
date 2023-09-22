@@ -20,5 +20,17 @@ module.exports = {
     })
 
     return s_states
+  },
+
+  biggerAnd2ndBigger(arr) {
+    arr.sort()
+    let bigger = arr[arr.length - 1], secbigger
+
+    let i = arr.length - 2
+    while(arr[i] == bigger) i--;
+
+    secbigger = arr[i]
+
+    return { bigger, secbigger }
   }
 }
