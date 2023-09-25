@@ -1,4 +1,4 @@
-let people = [
+const people = [
   {
     name: "Gabriel",
     age: 18
