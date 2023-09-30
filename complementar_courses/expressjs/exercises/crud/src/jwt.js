@@ -1,7 +1,7 @@
 const { sign, verify } = require('jsonwebtoken')
 
 function createTokens(user) {
-  const acessToken = sign({ username: user.username, id: user.id }, "scrtpsswd", {
+  const acessToken = sign({ username: user.username, id: user.id }, process.env.SECRET_PSWD, {
     expiresIn: "20m"
   });
 
@@ -15,7 +15,7 @@ function validateToken(req, res, next) {
     return res.status(401).json({ err: "There is no token" });
   }
   try {
-    const validToken = verify(acessToken, "scrtpsswd")
+    const validToken = verify(acessToken, process.env.SECRET_PSWD)
 
     if(validToken) {
       req.authenticated = true;
