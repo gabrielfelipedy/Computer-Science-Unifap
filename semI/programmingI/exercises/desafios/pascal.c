@@ -20,13 +20,13 @@ void fill_trian(int alt, int trian[][alt]) {
 * This function prints the matriz
 */
 
-void print_trian(int alt, int trian[alt][alt]) {
+void print_trian(int alt, int trian[][alt]) {
  for(int i = 0; i < alt; i++) {
 
-    for(int k = alt-i; k >= 0; k--) putchar(' ');
+    for(int k = alt-i; k >= 0; k--) printf("   ");
 
     for(int j = 0; j <= i; j++) {
-      printf("%d ", trian[i][j]);
+      printf("%6d ", trian[i][j]);
     }
     putchar('\n');
   }
