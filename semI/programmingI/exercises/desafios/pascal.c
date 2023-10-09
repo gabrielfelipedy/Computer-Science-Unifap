@@ -25,17 +25,24 @@ void print_trian(int alt, int trian[][alt]) {
 
     for(int k = alt-i; k >= 0; k--) printf("   ");
 
-    for(int j = 0; j <= i; j++) {
-      printf("%6d ", trian[i][j]);
-    }
+    for(int j = 0; j <= i; j++)
+      printf("%5d ", trian[i][j]);
+  
     putchar('\n');
   }
 }
 
 int main() {
-  int alt;
-  printf("Digite a altura do triângulo de pascal: ");
-  scanf("%d", &alt);
+  int alt = 1;
+  do {
+    if(alt < 0)
+			printf("Não pode valores negativos\n");
+		else if(alt > 20) 
+			printf("Valor muito grande\n");
+
+    printf("Digite a altura do triângulo de pascal (entre 1 e 20): ");
+    scanf("%d", &alt);
+  } while(alt > 20 || alt <= 0);
 
   int trian[alt][alt];
 

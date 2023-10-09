@@ -9,14 +9,14 @@ void piramide(int altura) {
 
 	for(int i = 1; i <= altura; i++) {
 
-		for(int l = (altura*2)-(2*i); l >= 0; l--) putchar(' ');
+		for(int l = (altura*2)-(2*i); l >= 0; l--) printf("   ");
 
 		for(int j = 1; j <= i; j++) {
-			printf("%d ", j);
+			printf("%5d ", j);
 
 			if(j == i) {
 				for(int k = j-1; k >= 1; k--) {
-					printf("%d ", k);
+					printf("%5d ", k);
 				}
 			}
 		}
@@ -27,8 +27,15 @@ void piramide(int altura) {
 
 int main() {
 	
-	int alt;
-	printf("Digite a altura: ");
-	scanf("%d", &alt);
+	int alt = 1;
+	do {
+		if(alt < 0)
+			printf("Não pode valores negativos\n");
+		else if(alt > 20) 
+			printf("Valor muito grande\n");
+
+		printf("Digite a altura (entre 1 e 20): ");
+		scanf("%d", &alt);
+	} while(alt <= 0 || alt > 20);
 	piramide(alt);
 }
