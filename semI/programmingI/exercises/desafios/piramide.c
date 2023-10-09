@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX_TAM 20
+
 void piramide(int altura) {
 	if(altura < 2) {
 		perror("Altura invalida");
@@ -31,11 +33,11 @@ int main() {
 	do {
 		if(alt < 0)
 			printf("Não pode valores negativos\n");
-		else if(alt > 20) 
+		else if(alt > MAX_TAM) 
 			printf("Valor muito grande\n");
 
 		printf("Digite a altura (entre 1 e 20): ");
 		scanf("%d", &alt);
-	} while(alt <= 0 || alt > 20);
+	} while(alt <= 0 || alt > MAX_TAM);
 	piramide(alt);
 }

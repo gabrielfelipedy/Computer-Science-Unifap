@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define MAX_TAM 20
+
 /*
 * This function fills the triangle with the correct values
 */
@@ -37,12 +39,12 @@ int main() {
   do {
     if(alt < 0)
 			printf("Não pode valores negativos\n");
-		else if(alt > 20) 
+		else if(alt > MAX_TAM) 
 			printf("Valor muito grande\n");
 
     printf("Digite a altura do triângulo de pascal (entre 1 e 20): ");
     scanf("%d", &alt);
-  } while(alt > 20 || alt <= 0);
+  } while(alt <= 0 || alt > MAX_TAM);
 
   int trian[alt][alt];
 

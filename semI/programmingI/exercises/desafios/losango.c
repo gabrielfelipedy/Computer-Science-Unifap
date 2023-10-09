@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define MAX_TAM 50
+
 void losango(int larg) {
 
 	int cons;
@@ -30,9 +32,18 @@ void losango(int larg) {
 	}
 }
 
-int main() {
-	int larg;
-	printf("Digite a largura central do losango: ");
-	scanf("%d", &larg);
+void main() {
+	int larg = 1;
+	do {
+		if(larg < 0)
+			printf("Não pode valores negativos\n");
+		else if(larg > MAX_TAM) 
+			printf("Valor muito grande\n");
+
+		printf("Digite a largura central do losango (entre 1 e 20): ");
+		scanf("%d", &larg);
+
+	} while(larg <= 0 || larg > MAX_TAM);
+
 	losango(larg);
 }
