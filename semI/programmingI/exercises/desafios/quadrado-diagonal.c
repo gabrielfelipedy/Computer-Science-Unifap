@@ -3,7 +3,7 @@
 
 #define MAX_TAM 50
 
-void print_square(int opt, int length) {
+void print_square(int length) {
 
 	putchar('\n');
 
@@ -12,21 +12,20 @@ void print_square(int opt, int length) {
 
 			bool cond1 = (i == 0 || i == length - 1);
 			bool cond2 = (j == 0 || j == length - 1);
+			
+      bool cond3 = (i == j);
 
-			bool master = cond1 || cond2;
+			bool master = cond1 || cond2 || cond3;
 
-			if(opt == 1)
-				printf("* ");
-			else {
-				printf("%c ", (master) ? '*' : ' ');
-			}
+			printf("%c ", (master) ? '*' : ' ');
+			
 		}
 		putchar('\n');
 	}	
 }
 
 int main() {
-	int opt=1, length=1;
+	int length=1;
 
 	do {
 		if(length < 0)
@@ -39,13 +38,5 @@ int main() {
 	}
 	while(length <= 0 || length > MAX_TAM);
 
-	while(1) {
-		printf("\nEscolha uma opção:\n1) Quadrado preenchido\n2) Quadrado vazado\n\nEscolha: ");
-		scanf("%d", &opt);
-
-		if(opt != 1 && opt != 2) printf("\nValor inválido\n");
-		else break;
-	}
-
-	print_square(opt, length);
+	print_square(length);
 }

@@ -3,17 +3,14 @@
 
 #define MAX_TAM 50
 
-void print_square(int opt, int length) {
+void print_trian(int opt, int length) {
 
 	putchar('\n');
 
 	for(int i = 0; i < length; i++) {
-		for(int j = 0; j < length; j++) {
+		for(int j = 0; j <= i; j++) {
 
-			bool cond1 = (i == 0 || i == length - 1);
-			bool cond2 = (j == 0 || j == length - 1);
-
-			bool master = cond1 || cond2;
+			bool master = (j == 0 || j == i || i == length - 1);
 
 			if(opt == 1)
 				printf("* ");
@@ -34,18 +31,18 @@ int main() {
 		else if(length > MAX_TAM) 
 			printf("Valor muito grande\n");
 
-		printf("Digite o lado do quadrado: ");
+		printf("Digite a altura do triangulo: ");
 		scanf("%d", &length);
 	}
 	while(length <= 0 || length > MAX_TAM);
 
 	while(1) {
-		printf("\nEscolha uma opção:\n1) Quadrado preenchido\n2) Quadrado vazado\n\nEscolha: ");
+		printf("\nEscolha uma opção:\n1) Triangulo preenchido\n2) Triangulo vazado\n\nEscolha: ");
 		scanf("%d", &opt);
 
 		if(opt != 1 && opt != 2) printf("\nValor inválido\n");
 		else break;
 	}
 
-	print_square(opt, length);
+	print_trian(opt, length);
 }
